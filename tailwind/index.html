@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .sticky {
+
+            background: rgb(19, 14, 14);
+            position: fixed;
+            top: 0;
+        }
+
+        #myBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: rgb(17, 16, 16);
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        @media screen and (max-width:768px) {
+            #navbar {
+                position: relative;
+                top: 0;
+                left: 0;
+                display: block;
+            }
+
+            .main-bg {
+                position: relative;
+                top: -80px;
+            }
+
+            #hidden {
+                visibility: hidden;
+            }
+
+            #close {
+                display: none;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                z-index: 3;
+            }
+
+            #open {
+                z-index: 12;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+
+            #list-items {
+                display: block;
+                padding: 70px 30px;
+                line-height: 2rem;
+                background-color: rgb(51, 50, 49);
+                width: 15rem;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: -500px;
+                transition: .5s;
+            }
+
+
+
+
+        }
+    </style>
+</head>
+<!-- 
+    <i class="fa-solid fa-bars"></i>
+<i class="fa-solid fa-x"></i>
+ -->
+
+<body>
+    <!-- NavBar Start -->
+    <div class="grid grid-cols-12 h-20 items-center b text-white fixed w-screen duration-1000 z-10" id="navbar">
+        <div class="col-span-2 h-full">
+
+
+            <div class=" ml-auto bg-orange-600 text-4xl h-full flex justify-center items-center text-gray-800"
+                id="hidden">
+                <p><span class="text-white  text-5xl">J</span>atin</p>
+            </div>
+        </div>
+        <div class="lg:col-span-9 col-span-10 grid grid-cols-8 text-sm " id="list-items">
+            <i class="fa-solid fa-x text-3xl text-white md:hidden close" id="close"></i>
+            <div class="col-span-2 md:w-1/2 ml-auto"><a href="#" class="hover:text-gray-400 duration-500"
+                    id="li-home">HOME</a></div>
+            <div class="col-span-1"><a href="#" class="hover:text-gray-400 duration-500"> ABOUT</a></div>
+            <div class="col-span-1"><a href="#" class="hover:text-gray-400 duration-500"> SERVICES</a></div>
+            <div class="col-span-1"><a href="#" class="hover:text-gray-400 duration-500"> PROJECTS</a></div>
+            <div class="col-span-1"><a href="#" class="hover:text-gray-400 duration-500"> OUR BLOG</a></div>
+            <div class="col-span-2"><a href="#" class="hover:text-gray-400 duration-500">CONTACT US</a></div>
+
+
+        </div>
+
+
+    </div>
+    <!-- NavBar end -->
+    <!-- home section Start -->
+    <div class="bg-[url('image/main-bg.jpg')] w-screen h-[70vh] bg-fixed gb-center md:bg-right bg-cover main-bg">
+        <i class="fa-solid fa-bars text-3xl text-white  open" id="open"></i>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+    </div>
+    <!-- home section Start -->
+    <!-- content section start -->
+    <div class="py-20">
+        <h1 class="text-center text-3xl py-10 font-bold ">
+            OUR FOCUS IS CLIENTS' SUCCESS
+        </h1>
+
+        <div class="h-2/1  sm:grid grid-cols-12 gap-5 ">
+            <div class="xl:col-span-2 lg:col-span-1 md:col-span-1 hidden "></div>
+
+            <div
+                class="lg:col-span-3 xl:col-span-3 sm:col-span-6 ml-auto text-center shadow-sm md:shadow-lg  shadow-black p-5 hover:border hover:border-gray-600">
+                <div class="">
+                    <i
+                        class="fa-solid fa-book text-white px-3 hover:bg-orange-600 py-2 bg-gray-700 rounded-full text-2xl "></i>
+                </div>
+                <h1 class="text-2xl my-2 text-center">
+                    heading
+                </h1>
+                <p class="text-justify text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sunt unde deserunt excepturi
+                    earum quisquam atque quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi!
+                </p>
+                <div class="my-2 w-1/2 mx-auto">
+                    <p class="p-1 text-orange-800 border  border-orange-800 cursor-pointer">
+                        READ MORE
+                    </p>
+                </div>
+            </div>
+            <div
+                class="sm:col-span-6 lg:col-span-3 lx:col-span-2 ml-auto text-center shadow-sm md:shadow-lg   shadow-black p-5 hover:border hover:border-gray-600">
+                <div class="">
+                    <i
+                        class="fa-solid fa-book text-white px-3 hover:bg-orange-600 py-2 bg-gray-700 rounded-full text-2xl "></i>
+                </div>
+                <h1 class="text-2xl my-2 text-center">
+                    heading
+                </h1>
+                <p class="text-justify text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sunt unde deserunt excepturi
+                    earum quisquam atque quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi!
+                </p>
+                <div class="my-2 w-1/2 mx-auto">
+                    <p class="p-1 text-orange-800 border  border-orange-800 cursor-pointer">
+                        READ MORE
+                    </p>
+                </div>
+            </div>
+            <div
+                class="sm:col-span-6 lg:col-span-3 lx:col-span-2 ml-auto text-center shadow-sm md:shadow-lg  shadow-black p-5 hover:border hover:border-gray-600">
+                <div class="">
+                    <i
+                        class="fa-solid fa-book text-white px-3 hover:bg-orange-600 py-2 bg-gray-700 rounded-full text-2xl "></i>
+                </div>
+                <h1 class="text-2xl my-2 text-center">
+                    heading
+                </h1>
+                <p class="text-justify text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sunt unde deserunt excepturi
+                    earum quisquam atque quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi!
+                </p>
+                <div class="my-2 w-1/2 mx-auto">
+                    <p class="p-1 text-orange-800 border  border-orange-800 cursor-pointer">
+                        READ MORE
+                    </p>
+                </div>
+            </div>
+            <div
+                class="sm:col-span-6 lg:col-span-3 lx:col-span-2 ml-auto text-center shadow-sm md:shadow-lg shadow-black p-5 hover:border hover:border-gray-600">
+                <div class="">
+                    <i
+                        class="fa-solid fa-book text-white px-3 hover:bg-orange-600 py-2 bg-gray-700 rounded-full text-2xl "></i>
+                </div>
+                <h1 class="text-2xl my-2 text-center">
+                    heading
+                </h1>
+                <p class="text-justify text-center">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sunt unde deserunt excepturi
+                    earum quisquam atque quo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, quasi!
+                </p>
+                <div class="my-2 w-1/2 mx-auto">
+                    <p class="p-1 text-orange-800 border  border-orange-800 cursor-pointer">
+                        READ MORE
+                    </p>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+    <!-- content section start -->
+
+    <div class="md:h-[80vh] bg-gray-400/50">
+        <div class="w-5/6 mx-auto">
+            <div>
+                <h1 class="text-center text-2xl font-bold py-3 md:py-12">
+                    ADVICE ON HOW TO MAKE INVESTMENTS
+                </h1>
+                <P class="text-center py:3 md:py-8">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore, rem, nulla labore fugiat corrupti
+                    praesentium sapiente pariatur debitis alias adipisci veritatis vitae aspernatur corporis sit fugit
+                    qui? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore, itaque harum cum, vitae
+                    velit odio omnis quae magni
+                </P>
+            </div>
+
+            <div class="md:grid grid-cols-3 gap-5 md:h-[43vh] ">
+                <div class="col-span-1 p-2 bg-white hover:shadow-sm hover:shadow-black my-3">
+                    <div class="h-1/2 h-[20vh] bg-[url('image/employee-img.jpg')] bg-cover bg-center">
+                    </div>
+                    <div class="h-1/2">
+                        <h1 class="text-2xl text-center pt-3 text-orange-800 font-semibold">
+                            Aut Perferendis
+                        </h1>
+                        <p class="text-justify text-center py-2 px-8">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere, sint minima
+                            temporibus dolorem culpa iste dolorum ipsa ad. Excepturi?
+                        </p>
+                        <div class="rounded-full text-center">
+                            <i
+                                class="fa-solid fa-circle-arrow-right text-orange-800 text-lg hover:text-2xl cursor-pointer"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-span-1 p-2 bg-white hover:shadow-sm hover:shadow-black my-3">
+                    <div class="h-1/2 h-[20vh] bg-[url('image/employee-img.jpg')] bg-cover bg-center">
+                    </div>
+                    <div class="h-1/2">
+                        <h1 class="text-2xl text-center pt-3 text-orange-800 font-semibold">
+                            Aut Perferendis
+                        </h1>
+                        <p class="text-justify text-center py-2 px-8">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere, sint minima
+                            temporibus dolorem culpa iste dolorum ipsa ad. Excepturi?
+                        </p>
+                        <div class="rounded-full text-center">
+                            <i
+                                class="fa-solid fa-circle-arrow-right text-orange-800 text-lg hover:text-2xl cursor-pointer"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-span-1 p-2 bg-white hover:shadow-sm hover:shadow-black my-3">
+                    <div class="h-1/2 h-[20vh] bg-[url('image/employee-img.jpg')] bg-cover bg-center">
+                    </div>
+                    <div class="h-1/2">
+                        <h1 class="text-2xl text-center pt-3 text-orange-800 font-semibold">
+                            Aut Perferendis
+                        </h1>
+                        <p class="text-justify text-center py-2 px-8">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium facere, sint minima
+                            temporibus dolorem culpa iste dolorum ipsa ad. Excepturi?
+                        </p>
+                        <div class="rounded-full text-center">
+                            <i
+                                class="fa-solid fa-circle-arrow-right text-orange-800 text-lg hover:text-2xl cursor-pointer"></i>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- content section end -->
+
+    <!-- new section start -->
+    <div class="md:grid grid-cols-6 md:h-[60vh]">
+        <div class="col-span-3 bg-orange-700 ">
+            <div class="md:grid grid-cols-4 px-5">
+                <div class="col-span-1">
+
+                </div>
+                <div class="md:col-span-2 ">
+                    <div class="text-white py-8 leading-8">
+                        <h1 class="text-3xl font-semibold py-3">
+                            Fresh Investment Solutions!
+                        </h1>
+                        <p> <i class="fa-solid fa-circle text-white text-xs"></i> Lorem ipsum dolor sit amet. Lorem,
+                            ipsum dolor.</p>
+                        <p> <i class="fa-solid fa-circle text-white text-xs"></i> Lorem ipsum dolor sit amet Lorem,
+                            ipsum. .</p>
+                        <p> <i class="fa-solid fa-circle text-white text-xs"></i> Lorem ipsum dolor sit amet. Lorem.</p>
+                        <p> <i class="fa-solid fa-circle text-white text-xs"></i> Lorem ipsum dolor sit amet. Lorem
+                            ipsum dolor sit amet.</p>
+                        <p> <i class="fa-solid fa-circle text-white text-xs"></i> Lorem ipsum dolor sit amet Lorem,
+                            ipsum dolor. .</p>
+                        <p> <i class="fa-solid fa-circle text-white text-xs"></i> Lorem ipsum dolor sit amet.</p>
+                        <p> <i class="fa-solid fa-circle text-white text-xs mb-8"></i> Lorem ipsum dolor sit amet. Lorem
+                            ipsum dolor sit.</p>
+
+                        <a class="text-white px-auto border border-white hover:bg-white hover:text-black py-2 px-3 "
+                            href="#">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-span-1">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-span-3 bg-gray-800">
+            <div class="md:grid grid-cols-4">
+                <div class="col-span-3 ">
+                    <div class="text-white py-8 leading-8 mx-5">
+                        <h1 class="text-3xl font-semibold my-3">
+                            Learning To Save Money
+                        </h1>
+                        <p> <i class="fa-solid fa-circle text-white text-xs"></i> Lorem ipsum dolor sit amet. Lorem,
+                            ipsum dolor.</p>
+                        <p> <i class="fa-solid fa-circle text-white text-xs"></i> Lorem ipsum dolor sit amet Lorem,
+                            ipsum. .</p>
+
+                        <p> <i class="fa-solid fa-circle text-white text-xs "></i> Lorem ipsum dolor sit amet. Lorem
+                            ipsum dolor sit.</p>
+                        <p class="mb-8">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi, quia facilis qui
+                            voluptates, tenetur illo at voluptatum adipisci quo eligendi ratione totam libero?
+                            Reprehenderit sit earum architecto necessitatibus consequuntur ab saepe illum alias
+                            perspiciatis.</p>
+
+                        <a class="text-white px-auto border border-white hover:bg-white hover:text-black py-2 px-3"
+                            href="#">Learn More</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- new section start -->
+    <div class="grid grid-cols-12 h-[10vh] py-5 gap-5">
+        <div class="col-span1"></div>
+        <div class="col-span-2 ">
+            <div><img src="image/visa.png" class="w-1/2"></div>
+        </div>
+
+        <div class="col-span-2">
+            <div><img src="image/google.png" class="w-1/2"></div>
+        </div>
+
+        <div class="col-span-2 ">
+            <div><img src="image/infosys.jpg" class="w-1/2"></div>
+        </div>
+        <div class="col-span-2 ">
+            <div><img src="image/paytm.png" class="w-1/2"></div>
+        </div>
+        <div class="col-span-2 ">
+            <div><img src="image/dominos.png" class="w-1/2"></div>
+        </div>
+        <div class="col-span1"></div>
+    </div>
+
+    <!-- new section start -->
+    <section class="text-white body-font relative bg-[url('image/form-bg.jpg')]">
+        <div class="container px-5 py-5 mx-auto">
+            <div class="flex flex-col text-center w-full mb-12">
+                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Contact Us</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn
+                    asymmetrical gentrify.</p>
+            </div>
+            <div class="  mx-auto">
+                <div class="flex flex-wrap -m-2 w-full">
+                    <div class="md:grid grid-cols-6 mx-auto">
+                        <div class="col-span-2">
+                            <div class="p-2">
+                                <div class="relative ">
+                                    <label for="name" class="leading-7 text-sm text-white">Name</label>
+                                    <input type="text" id="name" name="name"
+                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                </div>
+                            </div>
+                            <div class="p-2">
+                                <div class="relative">
+                                    <label for="email" class="leading-7 text-sm text-white">Email</label>
+                                    <input type="email" id="email" name="email"
+                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-span-4">
+                            <div class="p-2 w-full">
+                                <div class="relative">
+                                    <label for="message" class="leading-7 text-sm text-white">Message</label>
+                                    <textarea id="message" name="message"
+                                        class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-2 w-full  border-b border-gray-200 pb-8">
+                        <button
+                            class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- new section start -->
+    <div class="bg-gray-800 text-white w-full h-[40vh]">
+        <div class="p-2 w-full  text-center">
+            <a class="text-white">example@email.com</a>
+            <p class="leading-normal my-5">49 Smith St.
+                <br>Saint Cloud, MN 56301
+            </p>
+            <span class="inline-flex">
+                <a class="text-orange-800">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class=" hover:w-6 hover:h-6 w-5 h-5" viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                    </svg>
+                </a>
+                <a class="ml-4 text-orange-800">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5 hover:w-6 hover:h-6" viewBox="0 0 24 24">
+                        <path
+                            d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="ml-4 text-orange-800">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="w-5 h-5 hover:w-6 hover:h-6" viewBox="0 0 24 24">
+                        <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                    </svg>
+                </a>
+                <a class="ml-4 text-orange-800">
+                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        class="w-5 h-5 hover:w-6 hover:h-6" viewBox="0 0 24 24">
+                        <path
+                            d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z">
+                        </path>
+                    </svg>
+                </a>
+            </span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script>
+        window.addEventListener('scroll', function () {
+            navBar = document.getElementById('navbar');
+            navBar.classList.toggle('sticky', window.scrollY > 10)
+        });
+
+        let open = document.getElementById("open");
+        let close = document.getElementById("close");
+        let navbar = document.getElementById('list-items');
+        open.addEventListener("click", function () {
+            navbar.style.left = '0';
+            open.style.display = 'none'
+            close.style.display = 'block'
+        });
+        close.addEventListener("click", function () {
+            navbar.style.left = '-500px'
+            open.style.display = 'block'
+            close.style.display = 'none'
+
+        });
+
+
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+
+    </script>
+</body>
+
+</html>
